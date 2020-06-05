@@ -12,3 +12,12 @@ TODO:
 |-------------|----------------|---------------|----------------|
 | List<>      | GET            | api/          | Retrieve list of |
 | (EntityStub)      | GET            | api/          | Retrieve Entity by id |
+
+## Technologies Used
+* MySQL, MySQL Workbench
+* JPA/Hibernate
+* Spring Boot
+* Spring Data JPA
+* Git/Github
+
+## Lessons Learned
