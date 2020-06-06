@@ -1,7 +1,6 @@
 package com.skilldistillery.events.entities;
 
 import java.time.LocalDateTime;
-import java.time.Year;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,7 +42,7 @@ public class Book {
 	private String genre;
 	
 	@Column(name="year_published")
-	private Year yearPublished;
+	private String yearPublished;
 	
 	private String publisher;
 	
@@ -55,7 +54,7 @@ public class Book {
 
 
 	public Book(int id, String title, String author, int pages, String summary, LocalDateTime created,
-			LocalDateTime updated, boolean enabled, String coverImage, String genre, Year yearPublished,
+			LocalDateTime updated, boolean enabled, String coverImage, String genre, String yearPublished,
 			String publisher, String isbn) {
 		super();
 		this.id = id;
@@ -155,11 +154,11 @@ public class Book {
 		this.genre = genre;
 	}
 
-	public Year getYearPublished() {
+	public String getYearPublished() {
 		return yearPublished;
 	}
 
-	public void setYearPublished(Year yearPublished) {
+	public void setYearPublished(String yearPublished) {
 		this.yearPublished = yearPublished;
 	}
 
