@@ -6,9 +6,13 @@
 
 This program is able to store records of the books a user has read. In this program, the title, author, summary, number of pages, year published, publishing company and more can be stored for each book.
 
+Every year, I set a goal for myself to read two books a month. This program will be useful to keep track of the books read and also is a good sharing source if someone needs book recommendations.
+
+There are many ways to filter the books based on your wants and more can be built upon suggestion.
 
 
-
+- This program contains one entity - book which has a total of 13 fields
+<img src = "https://i.imgur.com/jBxn2Gi.png">
 
 ## API Endpoints
 
