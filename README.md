@@ -11,7 +11,7 @@ TODO:
 | Returns     | Verb           | URI           | Description    |
 |-------------|----------------|---------------|----------------|
 | Book        | POST           | api/books     | Creates a new book record |
-| List<Book>      | GET            | api/books          | Retrieve list of books |
+| `List<Book>`      | GET            | api/books          | Retrieve list of books |
 | Book      | GET            | api/books/{id}          | Retrieves a book by id |
 | List<Book> | GET           | api/books/search/{genre} | Retrieve list of books by genre |
 |Book        | POST          | api/books/{id}   | Updates an existing book by id |
