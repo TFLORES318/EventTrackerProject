@@ -11,8 +11,10 @@ Every year, I set a goal for myself to read two books a month. This program will
 There are many ways to filter the books based on your wants and more can be built upon suggestion.
 
 
-- This program contains one entity - book which has a total of 13 fields
+- This program contains one entity - Book which has a total of 13 fields
 <p align="center"> <img src="https://i.imgur.com/jBxn2Gi.png"> </p>
+
+- There is also a Book Controller, Book Service and Service Impl and Book Repository that extends JPA Repository for access of various CRUD operations. 
 
 ## API Endpoints
 
