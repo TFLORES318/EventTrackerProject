@@ -15,7 +15,7 @@ TODO:
 | `Book`      | `GET`            | `api/books/{id}`          | `Retrieves a book by id` |
 | `List<Book>` | `GET`           | `api/books/search/{genre}` | `Retrieve list of books by genre` |
 | `List<Book>`  | `GET`          | `api/books/search/{minPage}/{maxPage}` | `Retrieve list of books within number of pages range` |
-| `Book`        | `POST`          | `api/books/{id}`   | `Updates an existing book by id` |
+| `Book`        | `PUT`          | `api/books/{id}`   | `Updates an existing book by id` |
 | `void`       | `DELETE`        | `api/books/{id}`   | `Deletes an existing book by id` |
 
 ## Technologies Used
