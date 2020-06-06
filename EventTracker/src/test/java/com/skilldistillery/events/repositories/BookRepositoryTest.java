@@ -1,7 +1,10 @@
 package com.skilldistillery.events.repositories;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.DisplayName;
@@ -16,9 +19,17 @@ class BookRepositoryTest {
 	
 	@Autowired
 	private BookRepository bookRepo;
+	
+	@Test
+	@DisplayName("find all books")
+	void test_findAllBooks() {
+		List <Book> books = bookRepo.findAll();
+		assertNotNull(books);
+		assertTrue(books.size() > 0);
+	}
 
 	@Test
-	@DisplayName("")
+	@DisplayName("find a single book")
 	void test_findById() {
 		Optional <Book> bookOptional = bookRepo.findById(2);
 		Book bookTest = bookOptional.get();
