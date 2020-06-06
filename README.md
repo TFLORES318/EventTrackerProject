@@ -12,7 +12,7 @@ There are many ways to filter the books based on your wants and more can be buil
 
 
 - This program contains one entity - book which has a total of 13 fields
-<center><img src = "https://i.imgur.com/jBxn2Gi.png"></center>
+<img align="center" src="https://i.imgur.com/jBxn2Gi.png">
 
 ## API Endpoints
 
