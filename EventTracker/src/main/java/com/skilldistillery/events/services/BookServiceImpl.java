@@ -40,6 +40,11 @@ public class BookServiceImpl implements BookService {
 		genreRequested = "%" +genreRequested+ "%";
 		return bookRepo.findByGenreLike(genreRequested);
 	}
+	
+	@Override
+	public List<Book> booksByPageNumbers(int lowest, int highest) {
+		return bookRepo.findByPagesGreaterThanEqualAndPagesLessThanEqual(lowest, highest);
+	}
 
 	@Override
 	public Book updateBook(Book updateBook, int bookId) {

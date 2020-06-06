@@ -14,6 +14,8 @@ public interface BookService {
 	
 	List <Book> booksByGenre(String genreRequested);
 	
+	List<Book> booksByPageNumbers(int lowest, int highest);
+	
 	Book updateBook(Book updateBook, int bookId);
 	
 	boolean deleteBook(int bookId);

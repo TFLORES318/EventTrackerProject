@@ -69,6 +69,11 @@ public class BookController {
 		return booksWithGenre;
 	}
 	
+	@GetMapping("books/search/{lowestPage}/{highestPage}")
+	public List <Book> allBooksWithPageNumberRanger(@PathVariable int lowestPage, @PathVariable int highestPage) {
+		return bookSvc.booksByPageNumbers(lowestPage, highestPage);
+	}
+	
 	
 	@PutMapping("books/{bookId}")
 	public Book updateBook(@RequestBody Book book, @PathVariable int bookId, HttpServletResponse response) {

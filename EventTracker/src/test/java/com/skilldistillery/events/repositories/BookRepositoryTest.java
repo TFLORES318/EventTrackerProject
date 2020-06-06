@@ -60,5 +60,14 @@ class BookRepositoryTest {
 		
 	}
 	
+	@Test
+	@DisplayName("find books by page number range")
+	void test_findBooksByPageNumberRange() {
+		List <Book> booksByPages = bookRepo.findByPagesGreaterThanEqualAndPagesLessThanEqual(600, 700);
+		assertNotNull(booksByPages);
+		assertEquals(1, booksByPages.size());
+		assertEquals("A.J. Finn", booksByPages.get(0).getAuthor());
+	}
+	
 
 }
