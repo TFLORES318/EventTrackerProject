@@ -52,6 +52,23 @@ public class BookController {
 		return bookSvc.findBookById(bookId);
 	}
 	
+	@GetMapping("books/search/titleorsummary/{keyword}")
+	public List <Book> allBooksWithWordInTitleOrSummary(@PathVariable String keyword, HttpServletResponse response) {
+		List <Book> booksWithKeyword = null;
+		try {
+			booksWithKeyword = bookSvc.booksByKeyword(keyword);
+			if (booksWithKeyword.size() == 0) {
+				response.setStatus(404);
+			} else {
+				response.setStatus(200);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.setStatus(400);
+		}
+		return booksWithKeyword;
+	}
+	
 	@GetMapping("books/search/{genreType}")
 	public List <Book> allBooksWithSpecificGenre(@PathVariable String genreType, HttpServletResponse response) {
 		List <Book> booksWithGenre = null;

@@ -15,5 +15,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 	List <Book> findByGenreLike(String genre);
 	
 	List <Book> findByPagesGreaterThanEqualAndPagesLessThanEqual(int lowest, int highest);
+	
+	List <Book> findByTitleLikeOrSummaryLike(String title, String summary);
 
 }

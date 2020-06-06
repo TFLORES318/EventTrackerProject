@@ -12,6 +12,8 @@ public interface BookService {
 	
 	Book findBookById(int id);
 	
+	List <Book> booksByKeyword(String keyword);
+	
 	List <Book> booksByGenre(String genreRequested);
 	
 	List<Book> booksByPageNumbers(int lowest, int highest);
