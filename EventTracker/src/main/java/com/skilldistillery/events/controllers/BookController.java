@@ -70,8 +70,20 @@ public class BookController {
 	}
 	
 	@GetMapping("books/search/{lowestPage}/{highestPage}")
-	public List <Book> allBooksWithPageNumberRanger(@PathVariable int lowestPage, @PathVariable int highestPage) {
-		return bookSvc.booksByPageNumbers(lowestPage, highestPage);
+	public List <Book> allBooksWithPageNumberRanger(@PathVariable int lowestPage, @PathVariable int highestPage, HttpServletResponse response) {
+		List <Book> booksBetweenPageNumbers = null;
+		try {
+			booksBetweenPageNumbers = bookSvc.booksByPageNumbers(lowestPage, highestPage);
+			if (booksBetweenPageNumbers.size() == 0) {
+				response.setStatus(404);
+			} else {
+				response.setStatus(200);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.setStatus(400);
+		}
+		return booksBetweenPageNumbers;
 	}
 	
 	
