@@ -12,6 +12,8 @@ public interface BookService {
 	
 	Book findBookById(int id);
 	
+	List <Book> booksByGenre(String genreRequested);
+	
 	Book updateBook(Book updateBook, int bookId);
 	
 	boolean deleteBook(int bookId);

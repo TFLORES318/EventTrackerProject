@@ -11,5 +11,7 @@ import com.skilldistillery.events.entities.Book;
 public interface BookRepository extends JpaRepository<Book, Integer> {
 	
 	List <Book> findAll();
+	
+	List <Book> findByGenreLike(String genre);
 
 }

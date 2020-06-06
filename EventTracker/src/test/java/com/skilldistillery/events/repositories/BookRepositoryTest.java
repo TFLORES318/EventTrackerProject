@@ -47,5 +47,18 @@ class BookRepositoryTest {
 				+ "about the chances you missed.", bookTest.getSummary());
 		
 	}
+	
+	@Test
+	@DisplayName("find books by genre")
+	void test_findBooksByGenre() {
+		List <Book> booksByGenre = bookRepo.findByGenreLike("Mystery");
+		assertNotNull(booksByGenre);
+		assertEquals(4, booksByGenre.size());
+		assertEquals("The Good Daughter", booksByGenre.get(2).getTitle());
+		assertEquals(384, booksByGenre.get(0).getPages());
+		assertEquals("9780062791450", booksByGenre.get(3).getIsbn());
+		
+	}
+	
 
 }

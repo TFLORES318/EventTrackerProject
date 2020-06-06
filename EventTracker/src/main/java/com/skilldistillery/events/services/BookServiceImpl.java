@@ -34,6 +34,12 @@ public class BookServiceImpl implements BookService {
 		}
 		return managedBook;
 	}
+	
+	@Override
+	public List<Book> booksByGenre(String genreRequested) {
+		genreRequested = "%" +genreRequested+ "%";
+		return bookRepo.findByGenreLike(genreRequested);
+	}
 
 	@Override
 	public Book updateBook(Book updateBook, int bookId) {
@@ -71,5 +77,6 @@ public class BookServiceImpl implements BookService {
 			return false;
 		}
 	}
+
 
 }
