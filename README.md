@@ -10,8 +10,12 @@ TODO:
 
 | Returns     | Verb           | URI           | Description    |
 |-------------|----------------|---------------|----------------|
-| List<>      | GET            | api/          | Retrieve list of |
-| (EntityStub)      | GET            | api/          | Retrieve Entity by id |
+| Book        | POST           | api/books     | Creates a new book record |
+| List<Book>      | GET            | api/books          | Retrieve list of books |
+| Book      | GET            | api/books/{id}          | Retrieves a book by id |
+| List<Book> | GET           | api/books/search/{genre} | Retrieve list of books by genre |
+|Book        | POST          | api/books/{id}   | Updates an existing book by id |
+| void       | DELETE        | api/books/{id}   | Deletes an existing book by id |
 
 ## Technologies Used
 * MySQL, MySQL Workbench
