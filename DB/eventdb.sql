@@ -16,13 +16,24 @@ CREATE SCHEMA IF NOT EXISTS `eventDB` DEFAULT CHARACTER SET utf8 ;
 USE `eventDB` ;
 
 -- -----------------------------------------------------
--- Table `event`
+-- Table `book`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `event` ;
+DROP TABLE IF EXISTS `book` ;
 
-CREATE TABLE IF NOT EXISTS `event` (
+CREATE TABLE IF NOT EXISTS `book` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `author` VARCHAR(100) NOT NULL,
+  `pages` INT NOT NULL,
+  `summary` VARCHAR(1000) NOT NULL,
+  `create_date` DATETIME NOT NULL,
+  `update_date` DATETIME NULL,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
+  `cover_image_url` BLOB NULL,
+  `genre` VARCHAR(100) NOT NULL,
+  `year_published` YEAR NULL,
+  `publisher` VARCHAR(1000) NULL,
+  `isbn` VARCHAR(1000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -38,11 +49,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `event`
+-- Data for table `book`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `eventDB`;
-INSERT INTO `event` (`id`, `name`) VALUES (1, 'Test');
+INSERT INTO `book` (`id`, `title`, `author`, `pages`, `summary`, `create_date`, `update_date`, `enabled`, `cover_image_url`, `genre`, `year_published`, `publisher`, `isbn`) VALUES (1, 'Test', 'Test ', 100, 'Testing', '2020-06-04 19:26:00', NULL, 1, NULL, 'Test', NULL, NULL, NULL);
 
 COMMIT;
 

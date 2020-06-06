@@ -1,6 +1,6 @@
 package com.skilldistillery.events.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
@@ -14,10 +14,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class EventTest {
+class BookTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Event event;
+	private Book book;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -32,20 +32,24 @@ class EventTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		event = em.find(Event.class, 1);
+		book = em.find(Book.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		event = null;
+		book = null;
 	}
 
 	@Test
 	@DisplayName("testing event mapping")
 	void test_eventName() {
-		assertNotNull(event);
-		assertEquals("Test", event.getName());
+		assertNotNull(book);
+		assertEquals("Test", book.getTitle());
+		assertEquals("Test ", book.getAuthor());
+		assertEquals(100, book.getPages());
+		assertEquals("Testing", book.getSummary());
+		assertTrue(book.isEnabled());
 	}
 
 }
