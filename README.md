@@ -11,8 +11,9 @@ Every year, I set a goal for myself to read two books a month. This program will
 There are many ways to filter the books based on what is being searched.
 
 
-- This program contains one entity - Book which has a total of 13 fields
 <p align="center"> <img src="https://i.imgur.com/jBxn2Gi.png"> </p>
+
+- This program contains one entity - Book which has a total of 13 fields
 
 - The inserts of the Book Table were populated in MySQL Workbench.
 
