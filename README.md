@@ -8,13 +8,17 @@ This program is able to store records of the books a user has read. In this prog
 
 Every year, I set a goal for myself to read two books a month. This program will be useful to keep track of the books read and also is a good sharing source if someone needs book recommendations.
 
-There are many ways to filter the books based on your wants and more can be built upon suggestion.
+There are many ways to filter the books based on what is being searched.
 
 
 - This program contains one entity - Book which has a total of 13 fields
 <p align="center"> <img src="https://i.imgur.com/jBxn2Gi.png"> </p>
 
-- There is also a Book Controller, Book Service and Service Impl and Book Repository that extends JPA Repository for access of various CRUD operations. 
+- The inserts of the Book Table were populated in MySQL Workbench.
+
+- There is also a Book Controller, Book Service and Service Impl and Book Repository that extends JPA Repository for access of various CRUD operations.
+
+- Hibernate and JPA are integrated with Spring Boot for this project to build the back-end.
 
 ## API Endpoints
 
@@ -43,9 +47,17 @@ There are many ways to filter the books based on your wants and more can be buil
 ## Technologies Used
 * MySQL, MySQL Workbench
 * JPA/Hibernate
+* Spring Tool Suite
 * Spring Boot
 * Spring Data JPA
 * Git/Github
 * Postman
+* MAMP
+* Atom
 
 ## Lessons Learned
+- CRUD with REST and the differences between MVC
+- GET/POST/PUT/PATCH/DELETE HTTP methods mapping
+- HTTP Servlet Request and Response
+- Writing in JSON
+- Using postman to test out api endpoints
