@@ -44,6 +44,7 @@ There are many ways to filter the books based on what is being searched.
 - The seventh URI can update the fields in a book record.
 - The eighth URI can delete a book record.
 
+- http://13.59.127.124:8080/EventTracker
 
 ## Technologies Used
 * MySQL, MySQL Workbench
