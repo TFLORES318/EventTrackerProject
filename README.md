@@ -19,7 +19,11 @@ There are many ways to filter the books based on what is being searched.
 
 - There is also a Book Controller, Book Service and Service Impl and Book Repository that extends JPA Repository for access of various CRUD operations.
 
+- A Book Entity test was implemented to junit test fields as well as a Book Repository Test to test repository methods.
+
 - Hibernate and JPA are integrated with Spring Boot for this project to build the back-end.
+
+- In my experience, REST was more efficient to implement than MVC.
 
 ## API Endpoints
 
