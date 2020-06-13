@@ -25,7 +25,7 @@ function loadBookList() {
 			
 					var booksToShow = JSON.parse(xhr.responseText);
 					displayBooks(booksToShow);
-				
+					mysteryBookPagesRead(booksToShow);
 			} else if (xhr.status >= 400) {
 				console.error('Book not found');
 				var noBooks = document.getElementById('bookList');
@@ -34,6 +34,17 @@ function loadBookList() {
 		
 	}
 	xhr.send();
+}
+
+function mysteryBookPagesRead(booksToShow) {
+	var counter = 0;
+	for (let index = 0; index < booksToShow.length; index++) {
+		if (booksToShow[index].genre === "Mystery") {
+			counter += booksToShow[index].pages
+		}
+	}
+	var mysteryPagesRead = document.getElementById('bookAggregate');
+	mysteryPagesRead.textContent = 'Tabatha has read '+counter+' pages of Mystery! She is mysterious!'
 }
 	
 function displayBooks(books) {
@@ -364,7 +375,6 @@ function updateBookRequest(book, bookId) {
 		}
 	  }
 	  xhr.send(bookJSON);
-
 }
 
 
