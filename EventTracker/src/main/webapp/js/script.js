@@ -26,7 +26,7 @@ function loadBookList() {
 					var booksToShow = JSON.parse(xhr.responseText);
 					displayBooks(booksToShow);
 				
-			} else {
+			} else if (xhr.status >= 400) {
 				console.error('Book not found');
 				var noBooks = document.getElementById('bookList');
 				noBooks.textContent = 'There are no books';
@@ -41,6 +41,7 @@ function displayBooks(books) {
 	bookList.textContent = '';
 
 	var bookItemsTable = document.createElement('table');
+	bookItemsTable.id = 'bookItemsTable';
 	var bookItemsTableHead = document.createElement('thead');
 	var bookItemsTableHeaderRow = document.createElement('tr')
 	var bookItemsTableHeaderTitle = document.createElement('th');
@@ -75,6 +76,7 @@ function displayBooks(books) {
 
 	for (let index = 0; index < books.length; index++) {
 		let row = document.createElement('tr');
+		row.id = books[index].id;
 		let title = document.createElement('td');
 		title.textContent = books[index].title;
 		let author = document.createElement('td');
@@ -233,6 +235,7 @@ function displayBook(book) {
 	displayBookForm.appendChild(submitEdit);
 	submitEdit.addEventListener('click', function(e) {
 		e.preventDefault();
+		updateBook(book.id);
 	});
 	displayBookForm.appendChild(document.createElement('br'));
 
@@ -253,31 +256,26 @@ function displayBook(book) {
 
 
 function bookDelete(bookId) {
+	console.log('hello');
+	
 	let xhr = new XMLHttpRequest();
 	xhr.open('DELETE', 'api/books/'+bookId);
 
+	xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
 		console.log('Response received');
 		if (xhr.status === 204) {
 			console.log('success book deleted');
 			loadBookList();
-			// try {
-			// 	var book = JSON.parse(xhr.responseText);
-			// 	displayBook(book);
-			// } catch (e) {
-			// 	console.error('Book Not Found');
-			// 	var noBook = document.getElementById('bookDetails');
-			// 	noBook.textContent = 'Book Not Found';
-			// }
 		} else {
 			console.error('Book Not Deleted');
 			var noBook = document.getElementById('bookDetails');
 			noBook.textContent = 'Book Not Deleted';
 		}
 	}
+}
 	xhr.send();
 }
-
 
 
 function createBook() {
@@ -324,4 +322,49 @@ function newBook(book) {
 	  xhr.send(bookJSON);
 
 }
+
+function updateBook(bookId) {
+	book = {};
+	book.id = bookId;
+	book.title = bookForm.title.value;
+	book.author = bookForm.author.value;
+	book.pages = bookForm.pages.value;
+	book.summary = bookForm.summary.value;
+	book.genre = bookForm.genre.value;
+	book.yearPublished = bookForm.yearPublished.value;
+	book.publisher = bookForm.publisher.value;
+	book.isbn = bookForm.isbn.value;
+	console.log(book);
+	updateBookRequest(book, bookId);
+}
+
+
+function updateBookRequest(book, bookId) {
+	let xhr = new XMLHttpRequest();
+	xhr.open('PUT', 'api/books/'+bookId);
+	
+	xhr.setRequestHeader("Content-type", "application/json");
+	let bookJSON = JSON.stringify(book);
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4 ) {
+		  if ( xhr.status == 200 || xhr.status == 201 ) { 
+			try {
+				var updatedBook = JSON.parse(xhr.responseText); 
+				loadBookList();
+		  } catch (e) {
+			  console.log("POST request failed.");
+			  console.error(xhr.status + ': ' + xhr.responseText);
+		  }
+		  }
+		  else {
+			console.log("POST request failed.");
+			console.error(xhr.status + ': ' + xhr.responseText);
+		  }
+		}
+	  }
+	  xhr.send(bookJSON);
+
+}
+
 
