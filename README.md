@@ -79,7 +79,7 @@ There are many ways to filter the books based on what is being searched.
 * MAMP
 * Atom
 
-# Week 2
+#### Week 2
 * All of the above
 * Visual Studio Code
 
