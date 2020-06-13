@@ -25,6 +25,24 @@ There are many ways to filter the books based on what is being searched.
 
 - In my experience, REST was more efficient to implement than MVC.
 
+#### Week 2
+- The front end of this program was built with Javascript and HTML.
+
+- XMLHttpRequests are used in this program - data is displayed on the same web page whether it's creating a new book, viewing the book details or entire table of books, updating a book or deleting a book.
+
+- The GET, PUT, POST and DELETE requests map to the controller methods created last week.
+
+- The Javascript display page implements full CRUD.
+
+- When creating a book, once all the fields are filled out on the form, the user will see their newly created book at the bottom of the table.
+
+- Reading is used when viewing the book table. Also, a book row can be clicked and it will create a form in the bottom that displays the book details.
+
+- If a user wants to select a book to edit or delete the record, the user can click somewhere in the row where the book is displayed. This opens a form at the bottom of the page. Once a book is edited, the updated information will display on the table. If the book is deleted, the book record will be erased from the table.
+
+- Data aggregation is displayed at the top of the page. A function was made to add the total number of pages read from the mystery genre, this being my favorite book genre.
+
+
 ## API Endpoints
 
 | Returns     | Verb           | URI           | Description    |
@@ -61,9 +79,21 @@ There are many ways to filter the books based on what is being searched.
 * MAMP
 * Atom
 
+# Week 2
+* All of the above
+* Visual Studio Code
+
+
 ## Lessons Learned
 - CRUD with REST and the differences between MVC
 - GET/POST/PUT/PATCH/DELETE HTTP methods mapping
 - HTTP Servlet Request and Response
 - Writing in JSON
 - Using postman to test out api endpoints
+
+#### Week 2
+- CRUD in javascript
+- XMLHttpRequests
+- Better understanding of javascript syntax
+- Building HTML elements in a javascript file
+- Better understanding of JSON
