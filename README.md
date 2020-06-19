@@ -13,6 +13,7 @@ There are many ways to filter the books based on what is being searched.
 
 <p align="center"> <img src="https://i.imgur.com/jBxn2Gi.png"> </p>
 
+# Week 1
 - This program contains one entity - Book which has a total of 13 fields
 
 - The inserts of the Book Table were populated in MySQL Workbench.
@@ -24,6 +25,23 @@ There are many ways to filter the books based on what is being searched.
 - Hibernate and JPA are integrated with Spring Boot for this project to build the back-end.
 
 - In my experience, REST was more efficient to implement than MVC.
+
+#### Week 2
+- The front end of this program was built with Javascript and HTML.
+
+- XMLHttpRequests are used in this program - data is displayed on the same web page whether it's creating a new book, viewing the book details or entire table of books, updating a book or deleting a book.
+
+- The GET, PUT, POST and DELETE requests map to the controller methods created last week.
+
+- The Javascript display page implements full CRUD.
+
+- When creating a book, once all the fields are filled out on the form, the user will see their newly created book at the bottom of the table.
+
+- Reading is used when viewing the book table. Also, a book row can be clicked and it will create a form in the bottom that displays the book details.
+
+- If a user wants to select a book to edit or delete the record, the user can click somewhere in the row where the book is displayed. This opens a form at the bottom of the page. Once a book is edited, the updated information will display on the table. If the book is deleted, the book record will be erased from the table.
+
+- Data aggregation is displayed at the top of the page. A function was made to add the total number of pages read from the mystery genre, this being my favorite book genre.
 
 ## API Endpoints
 
@@ -50,6 +68,8 @@ There are many ways to filter the books based on what is being searched.
 
 - http://13.59.127.124:8080/EventTracker
 
+
+
 ## Technologies Used
 * MySQL, MySQL Workbench
 * JPA/Hibernate
@@ -61,9 +81,20 @@ There are many ways to filter the books based on what is being searched.
 * MAMP
 * Atom
 
+#### Week 2
+* All of the above
+* Visual Studio Code
+
 ## Lessons Learned
 - CRUD with REST and the differences between MVC
 - GET/POST/PUT/PATCH/DELETE HTTP methods mapping
 - HTTP Servlet Request and Response
 - Writing in JSON
 - Using postman to test out api endpoints
+
+#### Week 2
+- CRUD in javascript
+- XMLHttpRequests
+- Better understanding of javascript syntax
+- Building HTML elements in a javascript file
+- Better understanding of JSON
