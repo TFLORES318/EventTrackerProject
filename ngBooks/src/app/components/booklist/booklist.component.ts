@@ -73,6 +73,7 @@ export class BooklistComponent implements OnInit {
   editBook(bookEdit : Book) {
     this.bookService.updateBook(bookEdit.id, bookEdit).subscribe(
       data => {
+      this.selectedBook = this.bookToEdit;
       this.bookToEdit = null;
       this.loadBooks();
       },
