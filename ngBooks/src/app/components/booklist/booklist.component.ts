@@ -19,6 +19,12 @@ export class BooklistComponent implements OnInit {
 
   bookToEdit = null;
 
+  selectedGenre: String = "all";
+
+  genres = [
+    'All Books','Romance', 'Thriller', 'Mystery', 'Novel'
+  ]
+
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {

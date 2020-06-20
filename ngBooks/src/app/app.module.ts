@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { BooklistComponent } from './components/booklist/booklist.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BookService } from './services/book.service';
+import { BookGenrePipe } from './pipes/book-genre.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooklistComponent
+    BooklistComponent,
+    BookGenrePipe
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { BookService } from './services/book.service';
     HttpClientModule
   ],
   providers: [
-    BookService
+    BookService,
+    BookGenrePipe
   ],
   bootstrap: [AppComponent]
 })
