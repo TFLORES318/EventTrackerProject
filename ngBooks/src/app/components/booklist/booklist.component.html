@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <div class="btn-group" role="group" aria-label="Basic example" *ngIf="!selectedBook">
 <span *ngFor="let genre of genres" (click)= "selectedGenre = genre">
-  <button type="button" class="btn btn-secondary mr-1">{{genre}}</button>
+  <button type="button" class="btn btn-secondary mr-1">{{genre}} {{getNumberOfBooks(genre)}}</button>
   </span>
 </div>
 
@@ -16,7 +16,7 @@
   </tr>
 </thead>
 <tbody>
-  <tr *ngFor="let book of books | bookGenre: selectedGenre " (click)="booksDetails(book)">
+  <tr *ngFor="let book of books | bookGenre: selectedGenre" (click)="booksDetails(book)">
   <td>{{book.title}}</td>
   <td>{{book.author}}</td>
   <td>{{book.genre}}</td>

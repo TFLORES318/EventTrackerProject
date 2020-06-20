@@ -3,6 +3,7 @@ import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BookGenrePipe } from 'src/app/pipes/book-genre.pipe';
 
 @Component({
   selector: 'app-booklist',
@@ -25,7 +26,7 @@ export class BooklistComponent implements OnInit {
     'All Books','Romance', 'Thriller', 'Mystery', 'Novel'
   ]
 
-  constructor(private bookService: BookService, private router: Router) { }
+  constructor(private bookService: BookService, private router: Router, private genrePipe: BookGenrePipe) { }
 
   ngOnInit(): void {
     this.loadBooks();
@@ -48,6 +49,11 @@ export class BooklistComponent implements OnInit {
 
   showBooks() {
     this.selectedBook = null;
+  }
+
+  getNumberOfBooks(genre) {
+    let numberOfBooks = this.genrePipe.transform(this.books, genre);
+    return numberOfBooks.length;
   }
 
   createBook(bookForm: NgForm) {

@@ -6,7 +6,7 @@ import { Book } from '../models/book';
 })
 export class BookGenrePipe implements PipeTransform {
 
-  transform(bookArr: Book[], type: String): Book[] {
+  transform(bookArr: Book[], type?: String): Book[] {
     let result = [];
 
     if (type === 'All Books') {
