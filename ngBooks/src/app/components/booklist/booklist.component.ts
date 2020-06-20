@@ -93,6 +93,7 @@ export class BooklistComponent implements OnInit {
         console.error('cannot delete book record');
       }
     );
+    this.selectedBook = null;
   }
 
 }

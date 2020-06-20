@@ -29,12 +29,18 @@
 
 
 
-<div *ngIf="selectedBook">
-  <h3>{{selectedBook.id}} - {{selectedBook.title}}</h3>
-  <blockquote>{{selectedBook.summary}}</blockquote>
-  <p>{{selectedBook.pages}}</p>
-  <p>{{selectedBook.yearPublished}} - {{selectedBook.publisher}}</p>
-  <p>{{selectedBook.isbn}}</p>
+<div *ngIf="selectedBook && !bookToEdit">
+  <em><h3>{{selectedBook.title}}</h3></em>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item"><em>By {{selectedBook.author}}</em></li>
+  <li class="list-group-item"><blockquote>{{selectedBook.summary}}</blockquote></li>
+  <li class="list-group-item"></li>
+</ul>
+<ul class="list-group list-group-horizontal-lg">
+  <li class="list-group-item">{{selectedBook.pages}} pages</li>
+  <li class="list-group-item"> <strong>{{selectedBook.publisher}} - {{selectedBook.yearPublished}} </strong></li>
+  <li class="list-group-item">ISBN {{selectedBook.isbn}}</li>
+  </ul>
   <button (click)="setEditBook()">Edit</button>
   <button (click)="deleteBook(selectedBook.id)">Delete Record</button>
   <button (click)="showBooks()">All Books</button>
@@ -102,7 +108,7 @@
 
 
 <div>
-  <form *ngIf="bookToEdit">
+  <form *ngIf="bookToEdit && selectedBook">
     <input type="text" placeholder="title" name="title" [(ngModel)]="bookToEdit.title"/><br>
     <input type="text" placeholder="Author" name="author" [(ngModel)]="bookToEdit.author"/><br>
     <input type="text" placeholder="Genre" name="genre" [(ngModel)]="bookToEdit.genre"/><br>
