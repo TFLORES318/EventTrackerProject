@@ -19,7 +19,7 @@ export class BooklistComponent implements OnInit {
 
   bookToEdit = null;
 
-  selectedGenre: String = "all";
+  selectedGenre: String = "All Books";
 
   genres = [
     'All Books','Romance', 'Thriller', 'Mystery', 'Novel'
@@ -56,12 +56,14 @@ export class BooklistComponent implements OnInit {
     this.bookService.createNewBook(book).subscribe(
       bookCreationSuccess => {
         console.log('BookList Component.createBook(): book works!');
-        this.router.navigateByUrl('/books');
+        // this.router.navigateByUrl('/books');
+        this.loadBooks();
       },
       bookNotCreated => {
         console.error('BookListComponent.createBook(): error creating new book');
       }
     )
+    bookForm.reset();
   }
 
   setEditBook() {
