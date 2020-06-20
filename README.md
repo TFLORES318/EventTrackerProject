@@ -13,7 +13,7 @@ There are many ways to filter the books based on what is being searched.
 
 <p align="center"> <img src="https://i.imgur.com/jBxn2Gi.png"> </p>
 
-# Week 1
+#### Week 1
 - This program contains one entity - Book which has a total of 13 fields
 
 - The inserts of the Book Table were populated in MySQL Workbench.
@@ -43,6 +43,25 @@ There are many ways to filter the books based on what is being searched.
 
 - Data aggregation is displayed at the top of the page. A function was made to add the total number of pages read from the mystery genre, this being my favorite book genre.
 
+#### Week 3
+- The front end of this program was built with HTML and Typescript through the framework model of Angular.
+
+-  The program contains a model, component which contains the html and typescript, service and pipe.
+
+- The angular program displays full CRUD - it uses Cross Origin to connect from it's port to the port that is handling the database from last week.
+
+- This front end differs from last week - when a user comes to the main page, the book list is displayed as a table with bootstrap implementation.
+
+- The create new book form is at the bottom of the screen and has bootstrap implementation.
+
+- When a book row is clicked, the book details will display. Bootstrap is implemented in both unordered lists displaying the book information.
+
+- A user can edit, delete or view all books from this page.
+
+- When a user decides to edit a page, another form is displayed on a new view with all inputs pre-populated.
+
+- The pipe implementation separates the books by genre.
+
 ## API Endpoints
 
 | Returns     | Verb           | URI           | Description    |
@@ -71,6 +90,7 @@ There are many ways to filter the books based on what is being searched.
 
 
 ## Technologies Used
+#### Week 1
 * MySQL, MySQL Workbench
 * JPA/Hibernate
 * Spring Tool Suite
@@ -85,7 +105,11 @@ There are many ways to filter the books based on what is being searched.
 * All of the above
 * Visual Studio Code
 
+#### Week 3
+* All of the above
+
 ## Lessons Learned
+#### Week 1
 - CRUD with REST and the differences between MVC
 - GET/POST/PUT/PATCH/DELETE HTTP methods mapping
 - HTTP Servlet Request and Response
@@ -98,3 +122,8 @@ There are many ways to filter the books based on what is being searched.
 - Better understanding of javascript syntax
 - Building HTML elements in a javascript file
 - Better understanding of JSON
+
+#### Week 3
+- CRUD in angular
+- Pipe implementation
+- Bootstrap integration in HTML
